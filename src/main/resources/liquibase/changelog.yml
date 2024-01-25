@@ -1,0 +1,21 @@
+databaseChangeLog:
+- logicalFilePath: liquibase/changelog.yml # путь до файла с changeset-ами
+- changeSet:
+      id: J1 # обязательный параметр для проверки записей в бд
+      author: Liquibase # обязательный параметр
+      changes:
+        - createTable: # выбор операции
+            tableName: user # название создаваемой таблицы
+            columns: # определение колонок и их заполнение
+              - column:
+                  name: id
+                  type: Integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false

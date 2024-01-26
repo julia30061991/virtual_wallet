@@ -16,5 +16,4 @@ public interface WalletService {
 
     //изменение баланса счета
     ResponseEntity<Map<String, Object>> changeBalance(UUID uuid, String type, int amount);
-
 }

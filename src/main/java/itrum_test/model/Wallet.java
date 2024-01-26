@@ -5,6 +5,9 @@ import java.io.Serializable;
 import java.util.UUID;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 @Table(name = "wallet")
 public class Wallet implements Serializable {
     @Id
@@ -18,34 +21,8 @@ public class Wallet implements Serializable {
     @Column(name = "balance", columnDefinition = "INT")
     private int balance;
 
-    public Wallet() {}
-
     public Wallet(UUID uuid) {
         this.uuid = uuid;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public UUID getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
-    }
-
-    public int getBalance() {
-        return balance;
-    }
-
-    public void setBalance(int balance) {
-        this.balance = balance;
     }
 
     public String toString() {

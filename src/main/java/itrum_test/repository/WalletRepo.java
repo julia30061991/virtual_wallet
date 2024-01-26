@@ -13,5 +13,6 @@ public interface WalletRepo extends JpaRepository <Wallet, Long> {
     boolean existsWalletByUuid (UUID uuid);
 
     //получение кошелька из бд по id
+	@Lock(LockModeType.PESSIMISTIC_WRITE)
     Wallet getByUuid (UUID uuid);
 }

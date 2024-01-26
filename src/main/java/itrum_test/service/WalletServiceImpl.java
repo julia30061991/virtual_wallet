@@ -36,6 +36,7 @@ public class WalletServiceImpl implements WalletService {
     }
 
     @Override
+	@Transactional
     public ResponseEntity<Map<String,Object>> changeBalance(UUID uuid, String type, int amount) {
         type = type.toLowerCase();
         HttpStatus status = HttpStatus.BAD_REQUEST;
@@ -64,7 +65,6 @@ public class WalletServiceImpl implements WalletService {
                     break;
                     default:
                         message = "Тип операции не поддерживается";
-                        status = HttpStatus.BAD_REQUEST;
             }
         }
         return new ResponseEntity<>(Map.of("message", message), status);

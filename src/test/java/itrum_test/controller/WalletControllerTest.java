@@ -44,7 +44,7 @@ class WalletControllerTest {
     }
 
     @Test
-    void change_wallet_test() throws Exception {
+    void change_wallet_balance_test() throws Exception {
         UUID uuid = UUID.randomUUID();
 
         when(service.changeBalance(uuid, "DEPOSIT", 100)).thenReturn(new ResponseEntity<>(Map.of(), HttpStatus.OK));
